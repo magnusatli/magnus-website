@@ -1,4 +1,5 @@
 import React from 'react';
+import aboutPhoto from '../public/assets/me.jpg';
 import Image from 'next/image';
 
 const AboutMe = () => {
@@ -8,7 +9,7 @@ const AboutMe = () => {
                 <div className='col-span-2'>
                     <h2 className='py-4 text-blue-600 flex justify-center'>About</h2>
                     <div className='w-full h-auto m-auto rounded-xl flex items-center justify-center p-4 hover:scale-105 ease-in duration-300'>
-                        <Image className='rounded-xl' src='/../public/assets/me.jpg' height={450} width={300}></Image>
+                        <Image className='rounded-xl' src={aboutPhoto} height={450} width={300}></Image>
                     </div>
                     <p className='py-2 text-gray-600 max-w-[70%] m-auto'>
                         I am currently looking for a job as a software developer.

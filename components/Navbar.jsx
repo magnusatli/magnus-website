@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Image from "next/image";
+import logo from "../public/assets/magLogo.png"
 import Link from "next/link";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu} from "react-icons/ai";
 import {FaLinkedinIn, FaGithub, FaTwitter} from "react-icons/fa";
@@ -27,7 +28,7 @@ const Navbar = () => {
     return (
         <div className={border ? "fixed w-full h-20 shadow-xl z-[100]" : "fixed w-full h-20 z-[100]"}>
             <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
-                <Image src='/../public/assets/magLogo.png' alt='Mag Logo' width={125} height={50}/>
+                <Image src={logo} alt='Mag Logo' width={125} height={50}/>
                 <div>
                     <ul className="hidden md:flex">
                         <Link href='/'>
@@ -52,7 +53,7 @@ const Navbar = () => {
                 <div className={isHidden ? "fixed left-0 top-0 w-[75%] sm:w-[60%] md:w:-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500" : "hidden"}>
                     <div>
                         <div className="flex w-full items-center justify-between">
-                            <Image src='/../public/assets/magLogo.png' alt="Mag Logo" width={90} height={40}/>
+                            <Image src={logo} alt="Mag Logo" width={90} height={40}/>
                             <div onClick={handleToggle} className="rounded-full shadow-xl shadow-gray-500 p-3 cursor-pointer">
                                 <AiOutlineClose></AiOutlineClose>
                             </div>
