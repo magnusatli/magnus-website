@@ -9,13 +9,13 @@ const Dashboard = () => {
                 <div>
                     <p className="text-sm tracking-widest text-blue-600">Magnús Atli Gylfason</p>
                     <h2 className="py-2">Software Developer</h2>
-                    <p className="py-4 text-gray-600 max-w-[70%] sm:w-[95%] md:w-[80%] m-auto">
+                    <p className="py-4 text-gray-600 max-w-[80%] m-auto">
                         My name is Magnús Atli Gylfason and I am a software developer. 
                         I am currently studying at Reykjavik University.
                         Currently, my interests lay in web development and I am used to doing both front end work and back end work.
                         Current technologies that I am used to are React, Next.js(JavaScript), along with Dotnet Core and C# for backend work. 
                     </p>
-                    <p className="py-4 text-gray-600 max-w-[70%] sm:w-[95%] md:w-[80%] m-auto">
+                    <p className="py-4 text-gray-600 max-w-[80%] m-auto">
                         I am graduating with BSc. degree in Computer Science from Reykjavik University in Spring 2023.
                         I will completing my final project Spring 2023 as well.
                         I have finished many courses in Reykjavik University on Design and Development of Software using many different programming languages.
