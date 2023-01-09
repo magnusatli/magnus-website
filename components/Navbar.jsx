@@ -32,16 +32,16 @@ const Navbar = () => {
                 <div>
                     <ul className="hidden md:flex">
                         <Link href='/'>
-                            <li className="ml-10 text-sm uppercase hover:border-b">Home</li>
+                            <li className="ml-10 text-sm uppercase hover:border-b border-blue-500">Home</li>
                         </Link>
                         <Link href='/#about'>
-                            <li className="ml-10 text-sm uppercase hover:border-b">About</li>
+                            <li className="ml-10 text-sm uppercase hover:border-b border-blue-500">About</li>
                         </Link>
                         <Link href="/#socials">
-                            <li className="ml-10 text-sm uppercase hover:border-b">Socials</li>
+                            <li className="ml-10 text-sm uppercase hover:border-b border-blue-500">Socials</li>
                         </Link>
                         <Link href='/cv'>
-                            <li className="ml-10 text-sm uppercase hover:border-b">CV</li>
+                            <li className="ml-10 text-sm uppercase hover:border-b border-blue-500">CV</li>
                         </Link>
                     </ul>
                     <div className="md:hidden" onClick={handleToggle}>
