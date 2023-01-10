@@ -7,7 +7,7 @@ const AboutMe = () => {
         <div id="about" className='w-full md:h-screen p-2 flex items-center'>
             <div className='max-w-[1240px] w-full h-full m-auto md:grid grid-cols-2 gap-8'>
                 <div className='col-span-2'>
-                    <h2 className='py-4 text-blue-600 flex justify-center'>About</h2>
+                    <h2 className='py-4 text-blue-600 flex justify-center border-t-2'>About</h2>
                     <div className='w-full h-auto m-auto rounded-xl flex items-center justify-center p-4 hover:scale-105 ease-in duration-300'>
                         <Image className='rounded-xl' src={aboutPhoto} height={450} width={300}></Image>
                     </div>
