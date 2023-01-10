@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import Dashboard from '../components/Dashboard'
 import AboutMe from '../components/AboutMe'
 import SocialBox from '../components/SocialBox'
+import {useTheme} from 'next-themes'
 
 const inter = Inter({ subsets: ['latin'] })
 

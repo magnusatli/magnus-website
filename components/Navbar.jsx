@@ -2,9 +2,13 @@ import React, {useEffect, useState} from "react";
 import Image from "next/image";
 import { useRouter } from 'next/router'
 import logo from "../public/assets/magLogo.png"
+import whiteLogo from "../public/assets/magLogoWhite.png"
 import Link from "next/link";
+import { useTheme } from 'next-themes'
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu} from "react-icons/ai";
 import {FaLinkedinIn, FaGithub, FaTwitter} from "react-icons/fa";
+import {BsSunFill, BsMoon} from 'react-icons/bs'
+
 
 
 
@@ -12,6 +16,7 @@ const Navbar = () => {
     const router = useRouter()
     const [isHidden, setIsHidden] = useState(false);
     const [border, setBorder] = useState(false);
+    const {theme, setTheme} = useTheme();
     useEffect(() => {
         const handleBorder = () => {
             if(window.scrollY > 90) {
@@ -27,26 +32,52 @@ const Navbar = () => {
         setIsHidden(!isHidden);
     };
 
+    const handleDarkToggle = () => {
+        if (theme === 'dark') {
+            return ( 
+                <BsSunFill onClick={() => setTheme('light')} className='ml-10 fill-white hover:border-b border-blue-500 h-[20px] w-[20px]'></BsSunFill>
+            )
+        } else {
+            return(
+                <BsMoon onClick={() => setTheme('dark')} className='ml-10 fill-black hover:border-b border-blue-500 h-[20px] w-[20px]'></BsMoon>
+            )
+        }
+    }
+
+    const changeLogo = () => {
+        if (theme =='dark') {
+            return (
+                <Image src={whiteLogo} alt='Mag Logo' width={125} height={50}/>
+            )
+        }
+        else{
+            return (
+                <Image src={logo} alt='Mag Logo' width={125} height={50}/>
+            )
+        }
+    }
+
     return (
         <div className={border ? "fixed w-full h-20 shadow-xl z-[100]" : "fixed w-full h-20 z-[100]"}>
             <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
                 <Link href="/">
-                <Image src={logo} alt='Mag Logo' width={125} height={50}/>
+                    {changeLogo()}
                 </Link>
                 <div>
                     <ul className="hidden md:flex">
                         <Link href='/'>
-                            <li className="ml-10 text-sm uppercase hover:border-b border-blue-500">Home</li>
+                            <li className="ml-10 text-sm uppercase hover:border-b border-blue-500 dark:text-white">Home</li>
                         </Link>
                         <Link href='/#about'>
-                            <li className="ml-10 text-sm uppercase hover:border-b border-blue-500">About</li>
+                            <li className="ml-10 text-sm uppercase hover:border-b border-blue-500 dark:text-white">About</li>
                         </Link>
                         <Link href="/#socials">
-                            <li className="ml-10 text-sm uppercase hover:border-b border-blue-500">Socials</li>
+                            <li className="ml-10 text-sm uppercase hover:border-b border-blue-500 dark:text-white">Socials</li>
                         </Link>
                         {/* <Link href='/cv'>
                             <li className="ml-10 text-sm uppercase hover:border-b border-blue-500">Download CV</li>
                         </Link> */}
+                        {handleDarkToggle()}
                     </ul>
                     <div className="md:hidden" onClick={handleToggle}>
                         <AiOutlineMenu className="md:hidden text-2xl" size={40}/>
@@ -66,20 +97,21 @@ const Navbar = () => {
                     <div className="pt-10">
                         <ul className="border-t border-gray-400 ">
                             <Link href='/'>
-                                <li onClick={()=> setIsHidden(false)} className="py-4 text-md">Home</li>
+                                <li onClick={()=> setIsHidden(false)} className="py-4 text-md dark:text-white">Home</li>
                             </Link>
                             <Link href='/#about'>
-                                <li onClick={()=> setIsHidden(false)} className="py-4 text-md">About</li>
+                                <li onClick={()=> setIsHidden(false)} className="py-4 text-md dark:text-white">About</li>
                             </Link>
                             <Link href="/#socials">
-                                <li onClick={()=> setIsHidden(false)} className="py-4 text-md">Socials</li>
+                                <li onClick={()=> setIsHidden(false)} className="py-4 text-md dark:text-white">Socials</li>
                             </Link>
                             {/* <Link href='/cv'>
                                 <li onClick={()=> setIsHidden(false)} className="py-4 text-md">Download CV</li>
                             </Link> */}
+                            {handleDarkToggle()}
                         </ul>
                         <div className="pt-40">
-                            <p className="uppercase tracking-widest">My Socials</p>
+                            <p className="uppercase tracking-widest dark:text-white">My Socials</p>
                             <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
                                 <a href="https://www.linkedin.com/in/magn%C3%BAs-atli-gylfason-451555251/" target='_blank' rel='noreferrer'>
                                     <div className="rounded-full shadow-lg shadow-gray-500 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
