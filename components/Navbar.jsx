@@ -71,6 +71,9 @@ const Navbar = () => {
                         <Link href='/#about'>
                             <li className="ml-10 text-sm uppercase hover:border-b border-blue-500 dark:text-white">About</li>
                         </Link>
+                        <Link href="/#projects">
+                            <li className="ml-10 text-sm uppercase hover:border-b border-blue-500 dark:text-white">Projects</li>
+                        </Link>
                         <Link href="/#socials">
                             <li className="ml-10 text-sm uppercase hover:border-b border-blue-500 dark:text-white">Socials</li>
                         </Link>
@@ -102,6 +105,9 @@ const Navbar = () => {
                             <Link href='/#about'>
                                 <li onClick={()=> setIsHidden(false)} className="py-4 text-md dark:text-white">About</li>
                             </Link>
+                            <Link href="/#projects">
+                                <li onClick={()=> setIsHidden(false)} className="py-4 text-md dark:text-white">Projects</li>
+                            </Link>
                             <Link href="/#socials">
                                 <li onClick={()=> setIsHidden(false)} className="py-4 text-md dark:text-white">Socials</li>
                             </Link>
@@ -115,22 +121,22 @@ const Navbar = () => {
                             <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
                                 <a href="https://www.linkedin.com/in/magn%C3%BAs-atli-gylfason-451555251/" target='_blank' rel='noreferrer'>
                                     <div className="rounded-full shadow-lg shadow-gray-500 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
-                                        <FaLinkedinIn/>
+                                        <FaLinkedinIn className="dark:fill-white"/>
                                     </div>
                                 </a>
                                 <a href="https://github.com/magnusatli" target='_blank' rel='noreferrer'>
                                     <div className="rounded-full shadow-lg shadow-gray-500 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
-                                        <FaGithub/>
+                                        <FaGithub className="dark:fill-white"/>
                                     </div>
                                 </a>
                                 <a onClick={() => router.push('mailto:magjrgylfason@gmail.com')} target='_blank' rel='noreferrer'>
                                     <div className="rounded-full shadow-lg shadow-gray-500 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
-                                        <AiOutlineMail/>
+                                        <AiOutlineMail className="dark:fill-white"/>
                                     </div>
                                 </a>
                                 <a href="https://twitter.com/magnusatli1" target='_blank' rel='noreferrer'>
                                     <div className="rounded-full shadow-lg shadow-gray-500 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
-                                        <FaTwitter/>
+                                        <FaTwitter className="dark:fill-white"/>
                                     </div>
                                 </a>
                             </div>

@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 import Dashboard from '../components/Dashboard'
 import AboutMe from '../components/AboutMe'
 import SocialBox from '../components/SocialBox'
-import {useTheme} from 'next-themes'
+import Projects from '../components/Projects'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,6 +20,7 @@ export default function Home() {
     <Navbar></Navbar>
     <Dashboard></Dashboard>
     <AboutMe></AboutMe>
+    <Projects></Projects>
     <SocialBox></SocialBox>
     </div>
   )
