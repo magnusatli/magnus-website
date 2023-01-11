@@ -6,7 +6,7 @@ const Projects = () => {
     <div id="projects" className='w-full md:h-screen p-2 flex items-center'>
         <div className='max-w-[1240px] w-full h-[25%] m-auto gap-8'>
             <h2 className='py-4 text-blue-600 flex justify-center'>Projects</h2>
-                <p className='py-2 text-gray-600 max-w-[80%] m-auto dark:text-white'>
+                <p className='py-2 text-gray-600 max-w-[95%] lg:w-[50%] m-auto dark:text-white'>
                     Currently, my only personal project that I can show off is this website, but this site will showcase future projects.
                     The GitHub repository for this website can be accessed below. 
                 </p>
