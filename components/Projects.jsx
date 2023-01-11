@@ -11,7 +11,7 @@ const Projects = () => {
                     The GitHub repository for this website can be accessed below. 
                 </p>
                 <a href="https://github.com/magnusatli/magnus-website" target='_blank' rel='noreferrer'>
-                    <div className='p-4 shadow-xl m-auto rounded-xl hover:scale-105 ease-in duration-300 w-[600px]'>
+                    <div className='p-4 shadow-xl m-auto rounded-xl hover:scale-105 ease-in duration-300 w-[60%]'>
                         <div className='p-6 grid grid-cols-2 gap-4 justify-center items-center'>
                             <div className='m-auto'>
                                 <GoGitBranch className='h-[50px] w-[50px] rounded-xl shadow-lg shadow-gray-500 dark:fill-white'/>
