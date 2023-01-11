@@ -19,7 +19,7 @@ const Dashboard = () => {
                     </p>
                     <p className="py-4 text-gray-600 max-w-[95%] lg:w-[50%] m-auto dark:text-white">
                         I am graduating with BSc. degree in Computer Science from Reykjavik University in Spring 2023.
-                        I will completing my final project Spring 2023 as well.
+                        I will be completing my final project Spring 2023 as well.
                         I have finished many courses in Reykjavik University on Design and Development of Software using many different programming languages.
                         C++, C and of course Python are an example of the languages that I have used. 
                         This website was developed using Next.js and Tailwind CSS.
