@@ -3,7 +3,7 @@ import { GoGitBranch } from 'react-icons/go'
 
 const Projects = () => {
   return (
-    <div id="projects" className='w-full md:h-screen p-2 flex items-center'>
+    <div id="projects" className='w-full h-screen  p-2 flex items-center'>
         <div className='max-w-[1240px] w-full h-[25%] m-auto gap-8'>
             <h2 className='py-4 text-blue-600 flex justify-center'>Projects</h2>
                 <p className='py-2 text-gray-600 max-w-[95%] lg:w-[50%] m-auto dark:text-white'>
