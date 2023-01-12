@@ -16,7 +16,7 @@ const Navbar = () => {
     const router = useRouter()
     const [isHidden, setIsHidden] = useState(false);
     const [border, setBorder] = useState(false);
-    const {theme, setTheme} = useTheme('light');
+    const {theme, setTheme} = useTheme();
     useEffect(() => {
         const handleBorder = () => {
             if(window.scrollY > 90) {
@@ -26,6 +26,7 @@ const Navbar = () => {
             }
         };
         window.addEventListener('scroll', handleBorder);
+        setTheme('light')
     }, []);
 
     const handleToggle = () => {
