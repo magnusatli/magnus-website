@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { GoGitBranch } from 'react-icons/go'
 
 const Projects = () => {
@@ -10,8 +11,9 @@ const Projects = () => {
                     Currently, my only personal project that I can show off is this website, but this site will showcase future projects.
                     The GitHub repository for this website can be accessed below. 
                 </p>
-                <a href="https://github.com/magnusatli/magnus-website" target='_blank' rel='noreferrer'>
-                    <div className='p-4 shadow-xl m-auto rounded-xl hover:scale-105 ease-in duration-300 w-[60%]'>
+                
+                <div className='p-4 shadow-xl m-auto rounded-xl hover:scale-105 ease-in duration-300 w-[60%]'>
+                    <Link href="https://github.com/magnusatli/magnus-website" target='_blank' rel='noreferrer'>
                         <div className='p-6 grid grid-cols-2 gap-4 justify-center items-center'>
                             <div className='m-auto'>
                                 <GoGitBranch className='h-[50px] w-[50px] rounded-xl shadow-lg shadow-gray-500 dark:fill-white'/>
@@ -20,8 +22,8 @@ const Projects = () => {
                                 <h3 className='dark:text-white'>Website repository</h3> 
                             </div>
                         </div>
-                    </div>
-                </a>
+                    </Link>
+                </div>
             </div>
         </div>
   )

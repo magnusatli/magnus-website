@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import Image from "next/image";
-import { useRouter } from 'next/router'
 import logo from "../public/assets/magLogo.png"
 import whiteLogo from "../public/assets/magLogoWhite.png"
 import Link from "next/link";
@@ -13,11 +12,13 @@ import {BsSunFill, BsMoon} from 'react-icons/bs'
 
 
 const Navbar = () => {
-    const router = useRouter()
     const [isHidden, setIsHidden] = useState(false);
     const [border, setBorder] = useState(false);
     const {theme, setTheme} = useTheme();
+    const [mounted, setMounted] = useState(false);
+
     useEffect(() => {
+        setTheme('light')
         const handleBorder = () => {
             if(window.scrollY > 90) {
                 setBorder(true);
@@ -26,8 +27,10 @@ const Navbar = () => {
             }
         };
         window.addEventListener('scroll', handleBorder);
-        setTheme('light')
     }, []);
+
+    useEffect(() => { setMounted(true) }, []);
+    if (!mounted) return null;
 
     const handleToggle = () => {
         setIsHidden(!isHidden);
@@ -84,12 +87,12 @@ const Navbar = () => {
                         {handleDarkToggle('ml-10 fill-black hover:border-b border-blue-500 h-[20px] w-[20px] dark:fill-white')}
                     </ul>
                     <div className="md:hidden" onClick={handleToggle}>
-                        <AiOutlineMenu className="md:hidden text-2xl dark:fill-white" size={40}/>
+                        <AiOutlineMenu className={!isHidden ? "ease-in duration-500 dark:fill-white" : "hidden ease-in duration-500"} size={40}/>
                     </div>
                 </div>
             </div>
-            <div className={isHidden ? 'md:hidden fixed left-0 top-0 w-full h-screen bg-black/70 dark:bg-white/70' : ""}>
-                <div className={isHidden ? "fixed left-0 top-0 w-[75%] sm:w-[60%] md:w:-[45%] h-screen bg-[#ecf0f3] dark:bg-gray-800 p-10 ease-in duration-500" : 'fixed left-[-100%] top-0 p-10 ease-in duration-500'}>
+            <div className={isHidden ? 'md:hidden fixed left-0 top-0 w-full h-screen ease-in duration-500 bg-black/70 dark:bg-white/70' : ""}>
+                <div className={isHidden ? "fixed right-0 top-0 w-[75%] sm:w-[60%] md:w:-[45%] h-screen bg-[#ecf0f3] dark:bg-gray-800 p-10 ease-in duration-500" : 'fixed right-[-100%] top-0 p-10 ease-in duration-500'}>
                     <div>
                         <div className="flex w-full items-center justify-between">
                             {changeLogo(90, 40)}
@@ -120,26 +123,26 @@ const Navbar = () => {
                         <div className="pt-40">
                             <p className="uppercase tracking-widest dark:text-white">My Socials</p>
                             <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
-                                <a href="https://www.linkedin.com/in/magn%C3%BAs-atli-gylfason-451555251/" target='_blank' rel='noreferrer'>
+                                <Link href="https://www.linkedin.com/in/magn%C3%BAs-atli-gylfason-451555251/" target='_blank' rel='noreferrer'>
                                     <div className="rounded-full shadow-lg shadow-gray-500 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
                                         <FaLinkedinIn className="dark:fill-white"/>
                                     </div>
-                                </a>
-                                <a href="https://github.com/magnusatli" target='_blank' rel='noreferrer'>
+                                </Link>
+                                <Link href="https://github.com/magnusatli" target='_blank' rel='noreferrer'>
                                     <div className="rounded-full shadow-lg shadow-gray-500 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
                                         <FaGithub className="dark:fill-white"/>
                                     </div>
-                                </a>
-                                <a onClick={() => router.push('mailto:magjrgylfason@gmail.com')} target='_blank' rel='noreferrer'>
+                                </Link>
+                                <Link href='mailto:magjrgylfason@gmail.com' target='_blank' rel='noreferrer'>
                                     <div className="rounded-full shadow-lg shadow-gray-500 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
                                         <AiOutlineMail className="dark:fill-white"/>
                                     </div>
-                                </a>
-                                <a href="https://twitter.com/magnusatli1" target='_blank' rel='noreferrer'>
+                                </Link>
+                                <Link href="https://twitter.com/magnusatli1" target='_blank' rel='noreferrer'>
                                     <div className="rounded-full shadow-lg shadow-gray-500 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
                                         <FaTwitter className="dark:fill-white"/>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>

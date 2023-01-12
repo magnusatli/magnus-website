@@ -1,10 +1,9 @@
 import React from "react";
-import { useRouter } from "next/router";
+import Link from "next/link";
 import {FaLinkedinIn, FaGithub, FaTwitter} from "react-icons/fa";
 import {AiOutlineMail} from "react-icons/ai";
 
 const Dashboard = () => {
-    const router = useRouter();
     return (
         <div id="home" className='w-full h-screen text-center pt-20'>
             <div className="max-w[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
@@ -26,26 +25,26 @@ const Dashboard = () => {
                     </p>
                     <div className="pt-4">
                         <div className="flex items-center justify-between max-w-[450px] m-auto py-4 lg:border-[3.5px] rounded-2xl border-blue-500 p-4">
-                            <a href="https://www.linkedin.com/in/magn%C3%BAs-atli-gylfason-451555251/" target='_blank' rel='noreferrer'>
+                            <Link href="https://www.linkedin.com/in/magn%C3%BAs-atli-gylfason-451555251/" target='_blank' rel='noreferrer'>
                                 <div className="rounded-full  shadow-lg shadow-gray-500 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
                                     <FaLinkedinIn className="dark:fill-white"/>
                                 </div>
-                            </a>
-                            <a href="https://github.com/magnusatli" target='_blank' rel='noreferrer'>
+                            </Link>
+                            <Link href="https://github.com/magnusatli" target='_blank' rel='noreferrer'>
                                 <div className="rounded-full shadow-lg shadow-gray-500 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
                                     <FaGithub className="dark:fill-white"/>
                                 </div>
-                            </a>
-                            <a onClick={() => router.push('mailto:magjrgylfason@gmail.com')} target='_blank' rel='noreferrer'>
+                            </Link>
+                            <Link href='mailto:magjrgylfason@gmail.com' target='_blank' rel='noreferrer'>
                                 <div className="rounded-full shadow-lg shadow-gray-500 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
                                     <AiOutlineMail className="dark:fill-white"/>
                                 </div>
-                            </a>
-                            <a href="https://twitter.com/magnusatli1" target='_blank' rel='noreferrer'>
+                            </Link>
+                            <Link href="https://twitter.com/magnusatli1" target='_blank' rel='noreferrer'>
                                 <div className="rounded-full shadow-lg shadow-gray-500 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
                                     <FaTwitter className="dark:fill-white"/>
                                 </div>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>    
