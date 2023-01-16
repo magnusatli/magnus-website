@@ -18,7 +18,6 @@ const Navbar = () => {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        setTheme('light')
         const handleBorder = () => {
             if(window.scrollY > 90) {
                 setBorder(true);
