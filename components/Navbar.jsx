@@ -1,25 +1,22 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import logo from "../public/assets/magLogo.png"
-import whiteLogo from "../public/assets/magLogoWhite.png"
+import logo from "../public/assets/magLogo.png";
+import whiteLogo from "../public/assets/magLogoWhite.png";
 import Link from "next/link";
-import { useTheme } from 'next-themes'
-import { AiOutlineClose, AiOutlineMail, AiOutlineMenu} from "react-icons/ai";
-import {FaLinkedinIn, FaGithub, FaTwitter} from "react-icons/fa";
-import {BsSunFill, BsMoon} from 'react-icons/bs'
-
-
-
+import { useTheme } from 'next-themes';
+import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
+import { FaLinkedinIn, FaGithub, FaTwitter } from "react-icons/fa";
+import { BsSunFill, BsMoon } from 'react-icons/bs';
 
 const Navbar = () => {
     const [isHidden, setIsHidden] = useState(false);
     const [border, setBorder] = useState(false);
-    const {theme, setTheme} = useTheme();
+    const { theme, setTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
         const handleBorder = () => {
-            if(window.scrollY > 90) {
+            if (window.scrollY > 90) {
                 setBorder(true);
             } else {
                 setBorder(false);
@@ -28,7 +25,7 @@ const Navbar = () => {
         window.addEventListener('scroll', handleBorder);
     }, []);
 
-    useEffect(() => { setMounted(true) }, []);
+    useEffect(() => { setMounted(true); }, []);
     if (!mounted) return null;
 
     const handleToggle = () => {
@@ -38,27 +35,26 @@ const Navbar = () => {
     const handleDarkToggle = (className) => {
         if (theme === 'dark') {
             return ( 
-                <BsSunFill onClick={() => setTheme('light')} className={className}></BsSunFill>
-            )
+                <BsSunFill onClick={() => setTheme('light')} className={`${className} theme-icon`} />
+            );
         } else {
-            return(
-                <BsMoon onClick={() => setTheme('dark')} className={className}></BsMoon>
-            )
+            return (
+                <BsMoon onClick={() => setTheme('dark')} className={`${className} theme-icon`} />
+            );
         }
-    }
+    };
 
     const changeLogo = (width, height) => {
-        if (theme =='dark') {
+        if (theme === 'dark') {
             return (
-                <Image src={whiteLogo} alt='Mag Logo' width={width} height={height}/>
-            )
-        }
-        else{
+                <Image src={whiteLogo} alt='Mag Logo' width={width} height={height} />
+            );
+        } else {
             return (
-                <Image src={logo} alt='Mag Logo' width={width} height={height}/>
-            )
+                <Image src={logo} alt='Mag Logo' width={width} height={height} />
+            );
         }
-    }
+    };
 
     return (
         <div className={border ? "fixed w-full h-20 shadow-xl z-[100]" : "fixed w-full h-20 z-[100]"}>
@@ -69,21 +65,31 @@ const Navbar = () => {
                 <div>
                     <ul className="hidden md:flex">
                         <Link href='/'>
-                            <li className="ml-10 text-sm uppercase hover:border-b border-blue-500 dark:text-white">Home</li>
+                            <li className="ml-10 text-sm uppercase dark:text-white dark:hover:text-pink-500 hover:text-purple-500 hover:text-lg transition-all duration-300 ease-in-out">
+                                Home
+                            </li>
                         </Link>
                         <Link href='/#about'>
-                            <li className="ml-10 text-sm uppercase hover:border-b border-blue-500 dark:text-white">About</li>
+                            <li className="ml-10 text-sm uppercase dark:text-white dark:hover:text-pink-500 hover:text-purple-500 hover:text-lg transition-all duration-300 ease-in-out">
+                                About
+                            </li>
                         </Link>
                         <Link href="/#projects">
-                            <li className="ml-10 text-sm uppercase hover:border-b border-blue-500 dark:text-white">Projects</li>
+                            <li className="ml-10 text-sm uppercase dark:text-white dark:hover:text-pink-500 hover:text-purple-500 hover:text-lg transition-all duration-300 ease-in-out">
+                                Projects
+                            </li>
+                        </Link>
+                        <Link href='/#music'>
+                            <li className="ml-10 text-sm uppercase dark:text-white dark:hover:text-pink-500 hover:text-purple-500 hover:text-lg transition-all duration-300 ease-in-out">
+                                Music
+                            </li>
                         </Link>
                         <Link href="/#socials">
-                            <li className="ml-10 text-sm uppercase hover:border-b border-blue-500 dark:text-white">Socials</li>
+                            <li className="ml-10 text-sm uppercase dark:text-white dark:hover:text-pink-500 hover:text-purple-500 hover:text-lg transition-all duration-300 ease-in-out">
+                                Socials
+                            </li>
                         </Link>
-                        {/* <Link href='/cv'>
-                            <li className="ml-10 text-sm uppercase hover:border-b border-blue-500">Download CV</li>
-                        </Link> */}
-                        {handleDarkToggle('ml-10 fill-black hover:border-b border-blue-500 h-[20px] w-[20px] dark:fill-white')}
+                        {handleDarkToggle('ml-10 fill-black  h-[20px] w-[20px] dark:fill-white')}
                     </ul>
                     <div className="md:hidden" onClick={handleToggle}>
                         <AiOutlineMenu className={!isHidden ? "ease-in duration-500 dark:fill-white" : "hidden ease-in duration-500"} size={40}/>
@@ -101,22 +107,22 @@ const Navbar = () => {
                         </div>
                     </div>
                     <div className="pt-10">
-                        <ul className="border-t border-gray-400 ">
+                        <ul className="border-t border-gray-400">
                             <Link href='/'>
-                                <li onClick={()=> setIsHidden(false)} className="py-4 text-md dark:text-white">Home</li>
+                                <li onClick={() => setIsHidden(false)} className="py-4 text-md dark:text-white">HOME</li>
                             </Link>
                             <Link href='/#about'>
-                                <li onClick={()=> setIsHidden(false)} className="py-4 text-md dark:text-white">About</li>
+                                <li onClick={() => setIsHidden(false)} className="py-4 text-md dark:text-white">ABOUT</li>
                             </Link>
                             <Link href="/#projects">
-                                <li onClick={()=> setIsHidden(false)} className="py-4 text-md dark:text-white">Projects</li>
+                                <li onClick={() => setIsHidden(false)} className="py-4 text-md dark:text-white">PROJECTS</li>
+                            </Link>
+                            <Link href='/#music'>
+                                <li onClick={() => setIsHidden(false)} className="py-4 text-md dark:text-white">MUSIC</li>
                             </Link>
                             <Link href="/#socials">
-                                <li onClick={()=> setIsHidden(false)} className="py-4 text-md dark:text-white">Socials</li>
+                                <li onClick={() => setIsHidden(false)} className="py-4 text-md dark:text-white">SOCIALS</li>
                             </Link>
-                            {/* <Link href='/cv'>
-                                <li onClick={()=> setIsHidden(false)} className="py-4 text-md">Download CV</li>
-                            </Link> */}
                             {handleDarkToggle('fill-black h-[20px] w-[20px] dark:fill-white')}
                         </ul>
                         <div className="pt-40">
@@ -137,11 +143,7 @@ const Navbar = () => {
                                         <AiOutlineMail className="dark:fill-white"/>
                                     </div>
                                 </Link>
-                                <Link href="https://twitter.com/magnusatli1" target='_blank' rel='noreferrer'>
-                                    <div className="rounded-full shadow-lg shadow-gray-500 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
-                                        <FaTwitter className="dark:fill-white"/>
-                                    </div>
-                                </Link>
+                               
                             </div>
                         </div>
                     </div>
@@ -149,7 +151,6 @@ const Navbar = () => {
             </div>
         </div>
     )
-}
-
+};
 
 export default Navbar;

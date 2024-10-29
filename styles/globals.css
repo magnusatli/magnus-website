@@ -8,11 +8,11 @@ html {
 
 @layer base {
   body {
-    @apply bg-[#ecf0f4] text-[#2c3e50] tracking-wide dark:bg-gray-800
+    @apply bg-[#ecf0f4] text-[#2c3e50] tracking-wide dark:bg-gray-800 transition-colors duration-500 ease-in-out;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-[#2c3e50] tracking-wide
+    @apply font-bold text-[#2c3e50] tracking-wide dark:text-white transition-colors duration-500 ease-in-out;
   }
 
   h1 { 
@@ -24,10 +24,23 @@ html {
   }
 
   li {
-    @apply cursor-pointer
+    @apply cursor-pointer dark:text-white transition-colors duration-500 ease-in-out;
   }
 
   button {
-    @apply shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-blue-500 to-blue-300 text-white
+    @apply shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-blue-500 to-blue-300 text-white;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  }
+
+  .theme-icon {
+    transition: transform 0.5s ease, color 0.5s ease-in-out;
+  }
+
+  .theme-icon:hover {
+    transform: rotate(180deg);
+  }
+
+  .navbar, .navbar a {
+    transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
   }
 }

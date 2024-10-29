@@ -11,7 +11,6 @@ const Projects = () => {
                     Currently, my only personal project that I can show off is this website, but this site will showcase future projects.
                     The GitHub repository for this website can be accessed below. 
                 </p>
-                
                 <div className='p-4 shadow-xl m-auto rounded-xl hover:scale-105 ease-in duration-300 w-[60%]'>
                     <Link href="https://github.com/magnusatli/magnus-website" target='_blank' rel='noreferrer'>
                         <div className='p-6 grid grid-cols-2 gap-4 justify-center items-center'>

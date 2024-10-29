@@ -5,6 +5,7 @@ import Dashboard from '../components/Dashboard'
 import AboutMe from '../components/AboutMe'
 import SocialBox from '../components/SocialBox'
 import Projects from '../components/Projects'
+import SpotifyPlaylist from '../components/SpotifyPlaylist'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,6 +22,7 @@ export default function Home() {
     <Dashboard></Dashboard>
     <AboutMe></AboutMe>
     <Projects></Projects>
+    <SpotifyPlaylist playlistUrl="https://open.spotify.com/embed/playlist/19DMqDpIR3czchrSXxI4DX?utm_source=generator" />
     <SocialBox></SocialBox>
     </div>
   )
